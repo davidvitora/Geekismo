@@ -38,11 +38,13 @@ public class LoginUsuario extends HttpServlet {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         UsuariosDAO controlador = new UsuariosDAO();
-        try {
-            user = controlador.logarUsuario(login,senha);
-            session.setAttribute("usuario", user);
-        }catch(Exception e){
+        if ( request.getParameter("login") != null && request.getParameter("senha") != null){
+          try {
+              user = controlador.logarUsuario(login,senha);
+              session.setAttribute("usuario", user);
+           }catch(Exception e){
             
+           }
         }
         response.sendRedirect("/index.jsp");
     }
