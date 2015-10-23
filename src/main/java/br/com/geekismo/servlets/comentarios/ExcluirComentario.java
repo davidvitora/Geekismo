@@ -39,7 +39,7 @@ public class ExcluirComentario extends HttpServlet {
         }catch(Exception e){
               e.printStackTrace();
         }
-        response.sendRedirect("/Geekismo/articlefullmodel.jsp");
+        response.sendRedirect("/articlefullmodel.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

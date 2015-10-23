@@ -38,12 +38,13 @@ public class AdicionarUsuario extends HttpServlet {
         usuario.setLogin(request.getParameter("login"));
         usuario.setNome(request.getParameter("nome"));
         usuario.setSenha(request.getParameter("senha"));
+        if(request.getParameter("login") != null && request.getParameter("nome") != null && request.getParameter("senha") != null){
         UsuariosDAO controlador = new UsuariosDAO();
-        controlador.cadastrarUsuario(usuario);
+        controlador.cadastrarUsuario(usuario);}
         }catch(Exception e){
             e.printStackTrace();
         }
-        response.sendRedirect("/Geekismo/index.jsp");
+        response.sendRedirect("/index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

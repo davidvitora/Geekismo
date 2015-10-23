@@ -17,9 +17,9 @@ class ConexaoFactory {
         try{
             Class.forName("com.mysql.jdbc.Driver"); // essa linha pode resolver o problema
             return DriverManager.getConnection(
-                    /*"jdbc:mysql://localhost:3306/geekismo", "root", "potato371105");*/
+                    "jdbc:mysql://localhost:3306/geekismo", "root", "potato371105");
                     /**"jdbc:mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/appgeekismo", "adminuk4CVzm", "K71-t1TPLsf4");**/
-                   "jdbc:mysql://127.2.71.2:3306/geekismo", "adminj2Mbgwe", "naKkUM1y_uyA");
+                   /*"jdbc:mysql://127.2.71.2:3306/geekismo", "adminj2Mbgwe", "naKkUM1y_uyA");*/
         } catch (SQLException e) {
             throw new RuntimeException(e);}
     }

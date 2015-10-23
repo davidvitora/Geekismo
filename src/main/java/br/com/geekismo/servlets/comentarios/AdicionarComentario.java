@@ -40,15 +40,12 @@ public class AdicionarComentario extends HttpServlet {
         Usuarios usu = (Usuarios)session.getAttribute("usuario");
         Artigo art = (Artigo)session.getAttribute("artigo");
         try{
-           Controlador.inserirComentario
-        (request.getParameter("comentario"),
-         usu.getNome(),
-         Integer.toString(art.getId()),
-         Integer.toString(usu.getId())); 
+          if(request.getParameter("comentario") != null){
+              Controlador.inserirComentario(request.getParameter("comentario"), usu.getNome(),Integer.toString(art.getId()),Integer.toString(usu.getId())); }
         }catch(Exception e){
-            
+          e.printStackTrace();
         }
-        response.sendRedirect("/Geekismo/articlefullmodel.jsp");
+        response.sendRedirect("/articlefullmodel.jsp");
         
     }
 
