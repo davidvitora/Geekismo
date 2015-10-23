@@ -34,7 +34,7 @@
         <profile>
             <id>openshift</id>
             <build>
-                <finalName>homologacaogeekismo</finalName>
+                <finalName>Geekismo</finalName>
 	<plugins>
                     <plugin>
                         <artifactId>maven-war-plugin</artifactId>
