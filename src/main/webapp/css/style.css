@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Bubblegum+Sans);
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,600,400italic);
+/* navegação*/
+
+
+nav#navegacao {
+	background-color: #1d1a1a;
+}
+nav#navegacao ul{
+	font-family: 'Oswald', sans-serif;
+	list-style: none;
+	margin-bottom: 0px;
+	margin-left: -40px;
+}
+nav#navegacao li{
+	display: inline-block;
+    border: 0px;
+}
+nav#navegacao li:hover {
+
+}
+.botaologar{
+    padding-top: 20px;
+}
+nav#navegacao h1{
+	display: none;
+}
+/*cabecalho*/
+#cabecalho{
+    background-image: URL("../_imagens/cabecalho.jpeg");
+    z-index: 1;
+}
+div.container{
+	
+}
+
+body{
+   background-image: URL("../_imagens/background.jpg");
+    background-size: 100%;
+	
+}
+/*Corpo*/
+aside#lateral,div#footer{
+    color: #ffffff;
+    background-color: #1d1a1a;
+}
+/*Publicacoes*/
+div#publicacao{
+    background-color: #1d1a1a;
+}
+div#Formatacao{
+    background-color: #1d1a1a;
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+div.textocabecalho{
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    margin: 25px 15px;
+}
+
+a.titulo{
+    text-decoration: none !important;
+    font-family: 'Bubblegum Sans', cursive;
+    color: #ffffff !important;
+    font-size: 24pt;
+    font-style: normal;
+    margin: 10px 10px;
+    padding: 20px;
+}
+div#data{
+    font-family: 'Oswald', sans-serif;
+    font-size: 8pt;
+    margin-bottom: 10px;
+}
+div#texto{
+    font-family: 'Cabin', sans-serif;
+    font-size: 12pt;
+    margin: 50px 10px;
+}
+p{
+    text-align: justify;
+    text-indent: 15pt;
+}
+iframe.article{
+    border: none;
+}
+a.comentario{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:  #ffffff;            
+}
+p.legenda{
+    text-align: center;
+    font-size: 10pt;
+}
+div.img{
+    margin: 25px 0px;
+}
+div.video{
+    margin: 25px 0px;
+}
+/*Barra lateral*/
+aside#lateral{
+    margin: 0px 15px;
+    padding: 10px;
+    text-align: center;
+    hidth: 100%;
+}
+a#alateral{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 12pt;
+}
+/*Pe*/
+div#footer{
+    font-family: 'Oswald', sans-serif;
+    margin-top: 5px;
+    margin-bottom: -20px;
+    padding: 10px;
+    text-align: center;
+}
+/*navegador Pagina*/
+nav#pagina {
+    margin: 0px 5px;
+}
+nav#pagina ul{
+    font-family: 'Oswald', sans-serif;
+    list-style: none;
+    margin-bottom: 0px;
+    margin-left: -50px;
+}
+nav#pagina li{
+    display: inline-block;
+    border: 0px;
+    background-color: #1d1a1a;
+    margin: 5px;
+}
+nav#pagina li:hover {
+    background-color: #312c30;
+}
+nav#pagina h1{
+    display: none;
+}
+button.nave{
+    color: #f7f7f7;
+    background-color: #1D1A1A;
+    border: none;
+    padding: 15px;
+}
+button.nave:hover{
+    background-color: #312c30;
+}
+
+.esconder{
+    display: none;
+}
+.enviarcomentario{
+    border-bottom: 1px solid #ffffff; 
+}
+#comentarios{
+    color: black;
+}
+.tabelacomentario{
+    background-color: #f7f7f7 !important; 
+}
+.bttitulo{
+    background-color: #1D1A1A;
+    border: 0px;
+    margin: 0px;
+}

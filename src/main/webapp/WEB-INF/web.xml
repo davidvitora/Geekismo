@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app version="3.0"
-         xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         metadata-complete="false">
-
-         
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>AdicionarUsuario</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.usuarios.AdicionarUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginUsuario</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.usuarios.LoginUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SairUsuario</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.usuarios.SairUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirComentario</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.comentarios.ExcluirComentario</servlet-class>
+        <init-param>
+            <param-name>comentario</param-name>
+            <param-value/>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>AdicionarComentario</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.comentarios.AdicionarComentario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DefineArtigo</servlet-name>
+        <servlet-class>br.com.geekismo.servlets.artigos.DefineArtigo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdicionarUsuario</servlet-name>
+        <url-pattern>/AdicionarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginUsuario</servlet-name>
+        <url-pattern>/LoginUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SairUsuario</servlet-name>
+        <url-pattern>/SairUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirComentario</servlet-name>
+        <url-pattern>/ExcluirComentario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdicionarComentario</servlet-name>
+        <url-pattern>/AdicionarComentario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DefineArtigo</servlet-name>
+        <url-pattern>/DefineArtigo</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
 </web-app>
-
