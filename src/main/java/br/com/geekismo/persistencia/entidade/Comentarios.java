@@ -21,7 +21,7 @@ public class Comentarios {
     /*
         Construtor
     */
-    public Comentarios(int id, String comentario, int artigo, String nomes, String id_usuario){
+    public Comentarios(int id, String comentario, int artigo, String nome, String id_usuario){
         this.id = id;
         this.comentario = comentario;
         this.artigo = artigo;

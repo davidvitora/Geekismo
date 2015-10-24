@@ -83,7 +83,6 @@ public class ComentarioDAO {
         (Integer.parseInt(resultado.getString("id")),resultado.getString("comentario"),
                 Integer.parseInt(resultado.getString("artigo")),resultado.getString("nome")
                 ,resultado.getString("id_usuario")));
-                System.out.print(resultado.getString("nome"));
             }
             
         } catch (SQLException e) {

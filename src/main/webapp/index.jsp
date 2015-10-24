@@ -159,12 +159,16 @@
                 <div class="textocabecalho" align="center">
                     <form method="get" action="DefineArtigo">
                         <button class="bttitulo" onclick="submit" name="artigo" value="<%=u.getId()%>"><a class="titulo"><%=u.getTitulo()%></a></button>
-                    </form>   
-                    <div id="data">Criciuma, <%=u.getData()%></div>
-                    <div id="autor">Autor(a): <%=u.getAutor()%></div>
-                </div>
+                    </form>
+                    <div id="data"> <span class="data"> Criciuma, <%=u.getData()%></span> <span class="data">Autor(a): <%=u.getAutor()%></span></div>
+                </div>                
                 <div id="texto">
                     <%=u.getCorpo()%>
+                </div>
+                <div class="rodapedivisao">
+                    <div class="Comentarios">
+                        <p class="Comentarios" ><%=controlador.contarComentario(u.getId())%> Comentários</p>
+                    </div>
                 </div>
             </div>    
             <%}%>

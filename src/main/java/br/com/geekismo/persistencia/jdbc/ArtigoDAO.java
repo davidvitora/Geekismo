@@ -62,6 +62,25 @@ public class ArtigoDAO {
             }
                 return quantidadeArtigos;
         }
+        
+        public int contarComentario(int artigo){
+            int quantidadeComentarios = 0;
+             String sql = "SELECT COUNT(id) FROM comentarios where artigo = ?";
+            try{
+               PreparedStatement preparador = con.prepareStatement(sql);
+               preparador.setString(1, Integer.toString(artigo));
+               ResultSet resultado = preparador.executeQuery();
+               while(resultado.next()){
+                   quantidadeComentarios = Integer.parseInt(resultado.getString("COUNT(id)"));
+               }
+                return quantidadeComentarios;
+            }
+            catch(SQLException e){
+                e.printStackTrace();
+            }
+                return quantidadeComentarios;
+        }
+        
     public List<Artigo> getArtigos(int artigo1, int artigo2, int artigo3){
         List<Artigo> listaArtigos = new ArrayList<Artigo>();
         Artigo artigo = null;

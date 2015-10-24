@@ -100,30 +100,30 @@
     </header>
     <div id="publicacao" class="row">
         
-        <section role="main" id="conteudo" class="col-md-12">
+        <section role="main" id="publicacao" class="col-md-12">
             <div id="Formatacao">     
                 <div class="textocabecalho" align="center">
-                    <form method="get" action="articlefullmodel.jsp">
+                    <form method="get" action="DefineArtigo">
                         <button class="bttitulo" onclick="submit" name="artigo" value="<%=artigo.getId()%>"><a class="titulo"><%=artigo.getTitulo()%></a></button>
-                    </form>   
-                    <div id="data">Criciuma, <%=artigo.getData()%></div>
-                    <div id="autor">Autor(a): <%=artigo.getAutor()%></div>
-                </div>
+                    </form>
+                    <div id="data"> <span class="data"> Criciuma, <%=artigo.getData()%></span> <span class="data">Autor(a): <%=artigo.getAutor()%></span></div>
+                </div>  
                 <div id="texto">
                     <%=artigo.getCorpo()%>
                 </div>
-                <div id="comentarios">
-                    
+                <div class="rodapedivisao">
+                    <div class="Comentarios">
+                        
                 <% 
                     ComentarioDAO Controlador = new ComentarioDAO();
                     List<Comentarios> lista = Controlador.buscarComentarios
                     (artigo.getId());
                     for(Comentarios u: lista){
                         if( Integer.parseInt(u.getId_usuario()) == usuario.getId()){%>
-                            <div class="panel panel-default">
-                                <div class="panel-heading tabelacomentario"><%--Nome: <%=u.getNome()%>--%></div>
-                                <div class="panel-body tabelacomentario"><%=u.getComentario()%></div>
-                                <div class="panel-footer tabelacomentario">
+                        <div class="comentario">
+                            <div class="comennome"><span class="comennome"><%=u.getNome()%></span></div>
+                            <div class="textocomentario"><%=u.getComentario()%></div>
+                                <div class="controlcomentario">
                                     <form action="ExcluirComentario" method="get">
                                         <input class="esconder" name="id" value="<%=u.getId()%>"/>
                                         <button type="submit" class="btn btn-danger">Excluir</button>
@@ -131,11 +131,12 @@
                                 </div>
                             </div>
                       <%}else{%>
-                            <div class="panel panel-default">
-                                <div class="panel-heading"><%--Nome: <%=u.getNome()%>--%></div>
-                                <div class="panel-body"><%=u.getComentario()%></div>
-                            </div>    
+                             <div class="comentario">
+                                <div class="comennome"><span class="comennome"><%=u.getNome()%></span></div>
+                                <div class="textocomentario"><%=u.getComentario()%></div>
+                            </div>   
                       <%}}%>
+                    </div>
                 </div>
                 <% if( usuario.isEstado() == true){%>
                 <div>
@@ -151,7 +152,7 @@
                     </div>
                 </div>
                 <%}else{%>
-                <div>
+                <div class="enviarcomentario">
                     <p>Para enviar um comentário faça <a  class="navegacao nave" data-toggle="modal" data-target="#myModal">Login</a></p>
                 </div>    
                 <%}%>
