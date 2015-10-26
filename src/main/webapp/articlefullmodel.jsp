@@ -120,28 +120,40 @@
                     (artigo.getId());
                     for(Comentarios u: lista){
                         if( Integer.parseInt(u.getId_usuario()) == usuario.getId()){%>
-                        <div class="comentario">
-                            <div class="comennome"><span class="comennome"><%=u.getNome()%></span></div>
-                            <div class="textocomentario"><%=u.getComentario()%></div>
-                                <div class="controlcomentario">
-                                    <form action="ExcluirComentario" method="get">
+                         <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                    <img class="media-object" src="_imagens/_icones/avatar.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><span class="comennome"><%=u.getNome()%></span></h4>
+                                    <p class="textocomentario"><%=u.getComentario()%></p>
+                                </div>
+                                <form action="ExcluirComentario" method="get">
                                         <input class="esconder" name="id" value="<%=u.getId()%>"/>
-                                        <button type="submit" class="btn btn-danger">Excluir</button>
-                                    </form>
+                                        <button type="submit" class="btn btn-default botao">Excluir</button>
+                                </form>
+                         </div>
+                      <%}else{%>
+                             <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                    <img class="media-object" src="_imagens/_icones/avatar.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><span class="comennome"><%=u.getNome()%></span></h4>
+                                    <div class="textocomentario"><p><%=u.getComentario()%></p></div>
                                 </div>
                             </div>
-                      <%}else{%>
-                             <div class="comentario">
-                                <div class="comennome"><span class="comennome"><%=u.getNome()%></span></div>
-                                <div class="textocomentario"><%=u.getComentario()%></div>
-                            </div>   
                       <%}}%>
                     </div>
                 </div>
                 <% if( usuario.isEstado() == true){%>
                 <div>
                     <br/>
-                    <div>
+                    <div style="padding: 20px;">
                         <form role="form" method="get" action="AdicionarComentario">
                             <div class="form-group">
                                 <label for="comment">Comentário:</label>
@@ -153,7 +165,7 @@
                 </div>
                 <%}else{%>
                 <div class="enviarcomentario">
-                    <p>Para enviar um comentário faça <a  class="navegacao nave" data-toggle="modal" data-target="#myModal">Login</a></p>
+                    <p>Para enviar um comentário faça <a  style="cursor: pointer;" class="navegacao nave" data-toggle="modal" data-target="#myModal">Login</a></p>
                 </div>    
                 <%}%>
             </div>

@@ -108,6 +108,7 @@
         </ul>
     </nav>
 <div class="container">
+   <%--<a href="htmleditor/Editor.jsp">aaaaa</a>--%>
 	<header id="cabecalho" class="row">
 		<img id="logo" class="img-responsive" alt="Logo"  src="_imagens/logo.png"/>
         </header>

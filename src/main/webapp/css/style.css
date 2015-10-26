@@ -108,17 +108,9 @@ p{
     margin-top: 15px;
 }
 span.comennome{
-    border-left: 1px solid #333;
-    padding-left: 5px;
-}
-div.comennome{
-        padding: 5px;
-        margin: 0px;
-        text-align:center;
-}
-.textocomentario{
-    margin-left: 10px;
-    padding: 10px;
+     text-transform:capitalize;
+    color: #337ab7;
+    font-size: 12pt;
 }
 .controlcomentario{
     background-color: #333;
@@ -200,15 +192,18 @@ button.nave{
 }
 button.nave:hover{
     background-color: #312c30;
+    cursor:pointer;
 }
 
 .esconder{
     display: none;
 }
 .enviarcomentario{
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 #comentarios{
+    
     color: black;
 }
 .tabelacomentario{
@@ -218,4 +213,20 @@ button.nave:hover{
     background-color: #1D1A1A;
     border: 0px;
     margin: 0px;
+}
+.botao{
+    margin-left: 60px;
+    margin-top: 3px;
+    padding: 3px;
+    
+}
+.botao:hover{
+    box-shadow: 0px 0px 5px #337ab7;
+    cursor:pointer;
+}
+
+.formtexto{
+    color:black;
+    border-radius: 5px;
+    margin-left: 5px;
 }

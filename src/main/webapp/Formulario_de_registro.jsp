@@ -94,21 +94,26 @@
     </header>
     <div id="publicacao" class="row">
         
-        <section role="main" id="conteudo" class="col-md-12">
+        <section role="main" id="publicacao" class="col-md-12">
             <div id="Formatacao">
-                <h1>Cadastrar Usuario</h1><br/>
-                <form action="AdicionarUsuario">
-                <label for="login">Login:</label>
-                <input style="color:black;" type="text" name="login"/><br/><br/>
-                <label for="login">Nome:</label>
-                <input style="color:black;" type="text" name="nome"/><br/><br/>
-                <label for="login">Senha:</label>
-                <input style="color:black;" type="text" name="senha"/><br/><br/>
-                <input style="color:black;" type="submit" value="Cadastrar" /><br/><br/>
-                </form>
-            </div>    
+                <div style="text-align: center; padding-top: 30px; border-bottom: 1px solid #333;">
+                    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">Cadastro de usuário</h1><br/>
+                    <h5 style="margin-top: 0px; padding-top: 0px;padding-bottom: 10px;">Preencha os campos abaixo como solicitado</h5>
+                </div>
+                <div style="padding-left: 30px; padding-top: 40px; padding-bottom: 40px;">
+                    <form action="AdicionarUsuario">
+                        <label for="login"> Login:</label>
+                        <input  class="formtexto" type="text" name="login"/><br/><br/>
+                        <label for="login"> Nome:</label>
+                        <input class="formtexto" type="text" name="nome"/><br/><br/>
+                        <label for="login"> Senha:</label>
+                        <input class="formtexto" type="text" name="senha"/><br/><br/>
+                        <input class="btn btn-default botao"  type="submit" value="Cadastrar" /><br/><br/>
+                    </form>
+                </div>    
+            </div> 
+            
         </section>
-        
     </div>
     <div id="footer" class="row">
         Todas as imagens de filmes, séries e etc são marcas registradas dos seus respectivos proprietários
