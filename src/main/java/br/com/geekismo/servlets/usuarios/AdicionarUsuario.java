@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,15 +33,18 @@ public class AdicionarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException {
+        HttpSession sessao;
         try{
-   
+        sessao = request.getSession();
         Usuarios usuario = new Usuarios();
         usuario.setLogin(request.getParameter("login"));
         usuario.setNome(request.getParameter("nome"));
         usuario.setSenha(request.getParameter("senha"));
+        usuario.setEmail(request.getParameter("email"));
         if(request.getParameter("login") != null && request.getParameter("nome") != null && request.getParameter("senha") != null){
         UsuariosDAO controlador = new UsuariosDAO();
         controlador.cadastrarUsuario(usuario);}
+        sessao.setAttribute("usuario", usuario);
         }catch(Exception e){
             e.printStackTrace();
         }

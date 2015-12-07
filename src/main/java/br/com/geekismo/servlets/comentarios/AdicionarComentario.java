@@ -45,7 +45,6 @@ public class AdicionarComentario extends HttpServlet {
         }catch(Exception e){
           e.printStackTrace();
         }
-        response.sendRedirect("/articlefullmodel.jsp");
         
     }
 

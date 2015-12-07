@@ -1,0 +1,34 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+.JanelaFormulario{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    text-align: center;
+}
+body{
+    background-image: URL("../_imagens/Layout/RegistroFundo.jpg");
+    background-size: 100%;
+}
+.Cabecalho{
+    font-family: 'Oswald', sans-serif;
+    border-radius: 10px 10px 0px 0px;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.Corpo{
+    color: white;
+    padding-top: 25px;
+    background-color: rgba(1,1,1,0.5);
+    border-radius: 0px 0px 10px 10px;
+    padding-bottom: 20px;
+}
+.textopreto{
+    color: black;
+}
+.Dica{
+    color: gray;
+    font-size: 8pt;
+}

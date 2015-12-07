@@ -1,125 +1,55 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" 
-        import="br.com.geekismo.persistencia.jdbc.ArtigoDAO"
-        import="br.com.geekismo.persistencia.entidade.Artigo"
-        import="br.com.geekismo.persistencia.jdbc.ComentarioDAO" 
-        import="java.util.List"
-        import="br.com.geekismo.persistencia.entidade.Comentarios"%>
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Geekismo - Porque Geek é o novo sexy</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-        <jsp:useBean id="usuario" class="br.com.geekismo.persistencia.entidade.Usuarios" scope="session">
-        </jsp:useBean>
-        <jsp:useBean id="artigo" class="br.com.geekismo.persistencia.entidade.Artigo" scope="session">
-        </jsp:useBean>
-        <%
-            if( usuario.getNome() != null){
-                    usuario.setEstado(true);}
-        %>
-</head>
-<body>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<div class="container-fluid">
-    <nav id="navegacao" class="row">
-        <h1>menu</h1>
-        <ul>
-            <li>
-                <form method="get" action="index.jsp" >
-                    <button class="navegacao nave" onclick="submit" name="pa" value="1">HOME</button>
-                </form>
-            </li>
-            <li>
-                <form method="get" action="jsp/usuarios/Formulario_de_registro.jsp" >
-                    <button class="navegacao nave" onclick="submit">SOBRE</button>
-                </form>
-            </li>
-            <% if( usuario.isEstado() == true){%>
-            <li>    
-                <form method="get" action="SairUsuario" >
-                    <button class="navegacao nave" onclick="submit"><span class="glyphicon glyphicon-sunglasses"></span> Sair</button>
-                </form>
-            </li>    
-            <li>     
-                <form method="get">
-                    <button class="navegacao nave"><jsp:getProperty name="usuario" property="nome"/></button>
-                </form>
-            </li>
-           <%}else{%>
-           <li>
-               <button  class="navegacao nave" type="button" data-toggle="modal" data-target="#myModal">LOGAR</button>
-           </li>
-           <li>
-               <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Coloque seus dados para acessar</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form role="form" action="LoginUsuario">
-                                    <div class="form-group">
-                                        <label for="login">Login:</label>
-                                        <input name="login" type="text" class="form-control" id="login"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="senha">senha:</label>
-                                        <input name="senha" type="text" class="form-control" id="usr" />
-                                    </div>
-                                    <button type="submit" class="btn btn-default"><span style="color:Black;">Entrar</span></button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <span>Não tem conta? <a href="Formulario_de_registro.jsp"> Cadastre-se</a>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                            </div>
-                        </div>
+    <head>
+        <title>Geekismo - Cadastro de novo usu�rio</title>
+        <meta charset="utf-8" />
+        <link href="css/FormularioRegistro.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery.validate.js" type="text/javascript"></script>
+        <script src="js/ValidadorForm.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="JanelaFormulario" align="center">     
+            <div class="Cabecalho">
+                <h1 class="Titulo ">NOVO CADASTRO</h1>
+                <h5 class="Dica">Coloque seus dados para registrar uma nova conta</h5>
+            </div>
+            <div class="Corpo">
+                <form id="form-signup" role="form" action="/AdicionarUsuario">
+                    <div class="form-group">
+                       <label>
+                           Email:
+                           <input id="email" class="form-control textopreto" type="text" name="email" />
+                       </label><br/>
                     </div>
-                </div>  
-            </li>    
-           <%}%>
-        </ul>
-    </nav>
-</div>
-<div class="container">
-    <header id="cabecalho" class="row">
-        <img id="logo" class="img-responsive"  src="_imagens/logo.png"/>
-
-    </header>
-    <div id="publicacao" class="row">
-        
-        <section role="main" id="publicacao" class="col-md-12">
-            <div id="Formatacao">
-                <div style="text-align: center; padding-top: 30px; border-bottom: 1px solid #333;">
-                    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">Cadastro de usuário</h1><br/>
-                    <h5 style="margin-top: 0px; padding-top: 0px;padding-bottom: 10px;">Preencha os campos abaixo como solicitado</h5>
-                </div>
-                <div style="padding-left: 30px; padding-top: 40px; padding-bottom: 40px;">
-                    <form action="AdicionarUsuario">
-                        <label for="login"> Login:</label>
-                        <input  class="formtexto" type="text" name="login"/><br/><br/>
-                        <label for="login"> Nome:</label>
-                        <input class="formtexto" type="text" name="nome"/><br/><br/>
-                        <label for="login"> Senha:</label>
-                        <input class="formtexto" type="text" name="senha"/><br/><br/>
-                        <input class="btn btn-default botao"  type="submit" value="Cadastrar" /><br/><br/>
-                    </form>
-                </div>    
-            </div> 
-            
-        </section>
-    </div>
-    <div id="footer" class="row">
-        Todas as imagens de filmes, séries e etc são marcas registradas dos seus respectivos proprietários
-    </div>
-   </div>
-</body>
-</html>	
-
+                    <div class="form-group">
+                       <label>
+                           Nome:
+                           <input id="nome" class="form-control textopreto" type="text" name="nome" />
+                       </label><br/>
+                    </div>
+                    <div class="form-group">
+                       <label>
+                           Login:
+                           <input id="usuario" class="form-control textopreto" type="text" name="login" />
+                       </label><br/>
+                    </div>
+                    <div class="form-group">
+                       <label>
+                           Senha:
+                           <input id="senha" class="form-control textopreto" type="password" name="senha" />
+                       </label><br/>
+                    </div>
+                    <div class="form-group">
+                       <label>
+                           Redigite a senha:
+                           <input class="form-control textopreto" id="comfirmarsenha"  type="password" name="comfirmarsenha" />
+                       </label><br/>
+                    </div>
+                    <input id="cadastra" type="submit" class="btn btn-default"  value="Cadastrar"/><br/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
 

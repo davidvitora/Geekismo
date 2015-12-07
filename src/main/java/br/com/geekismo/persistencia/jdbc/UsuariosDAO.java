@@ -19,12 +19,13 @@ public class UsuariosDAO {
     }
     
     public void cadastrarUsuario(Usuarios usuario){
-        String sql = "insert into usuarios (login,nome,senha) values (?,?,?)";
+        String sql = "insert into usuarios (login,nome,senha,email) values (?,?,?,?)";
         try{
         PreparedStatement preparo = con.prepareStatement(sql);
         preparo.setString(1, usuario.getLogin());
         preparo.setString(2, usuario.getNome());
         preparo.setString(3, usuario.getSenha());
+        preparo.setString(4, usuario.getEmail());
         preparo.execute();
         preparo.close();
         }

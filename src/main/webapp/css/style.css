@@ -5,7 +5,9 @@
 @import url(https://fonts.googleapis.com/css?family=Doppio+One);
 /* navegação*/
 
-
+.navegacao{
+    
+}
 nav#navegacao {
     box-shadow: 1px 1px 10px black;
     background-color: #1d1a1a;
@@ -30,11 +32,6 @@ nav#navegacao h1{
     display: none;
 }
 /*cabecalho*/
-#cabecalho{
-    background-image: URL("../_imagens/cabecalho.jpeg");
-    z-index: 1;
-}
-
 body{
     background-image: URL("../_imagens/background.jpg");
     background-size: 100%;
@@ -194,6 +191,16 @@ button.nave:hover{
     background-color: #312c30;
     cursor:pointer;
 }
+button.navegacao{
+    color: #f7f7f7;
+    background-color: #1D1A1A;
+    border: none;
+    padding: 15px;
+}
+button.navegacao:hover{
+    background-color: #312c30;
+    cursor:pointer;
+}
 
 .esconder{
     display: none;
@@ -209,7 +216,7 @@ button.nave:hover{
 .tabelacomentario{
     background-color: #f7f7f7 !important; 
 }
-.bttitulo{
+.btitulo{
     background-color: #1D1A1A;
     border: 0px;
     margin: 0px;

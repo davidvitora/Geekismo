@@ -10,6 +10,7 @@ public class Usuarios {
     private String nome;
     private String senha;
     private boolean estado;
+    private String email;
 
     /**
      * @return the id
@@ -79,6 +80,20 @@ public class Usuarios {
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
     
 }
